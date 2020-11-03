@@ -65,7 +65,9 @@
             "@php artisan key:generate"
         ],
         "post-install-cmd": [
-            "@php artisan passport:keys"
+            "@php artisan passport:keys",
+            "chmod -R 755 bootstrap\/cache",
+            "php artisan cache:clear"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
